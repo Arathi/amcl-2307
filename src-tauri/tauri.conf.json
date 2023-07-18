@@ -1,0 +1,205 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:30718",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "amcl",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "app": {
+        "show": true,
+        "hide": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "process": {
+        "relaunch": true,
+        "exit": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.undsf.amcl",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "cli": {
+      "description": "Arathi's Minecraft Launcher",
+      "subcommands": {
+        "mods": {
+          "description": "Arathi's Minecraft Mods Manager",
+          "subcommands": {
+            "init": {
+              "description": "Initital mods directory.",
+              "args": [
+                {
+                  "name": "id",
+                  "index": 1,
+                  "takesValue": true
+                },
+                {
+                  "name": "name",
+                  "short": "n",
+                  "takesValue": true
+                },
+                {
+                  "name": "version",
+                  "short": "v",
+                  "takesValue": true
+                },
+                {
+                  "name": "game",
+                  "short": "g",
+                  "takesValue": true
+                },
+                {
+                  "name": "loader",
+                  "short": "l",
+                  "takesValue": true
+                },
+                {
+                  "name": "forge",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "fabric",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "source",
+                  "short": "s",
+                  "takesValue": true
+                },
+                {
+                  "name": "curseforge",
+                  "short": "c",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "modrinth",
+                  "short": "m",
+                  "multipleOccurrences": true
+                }
+              ]
+            },
+            "add": {
+              "description": "Add or update a mod.",
+              "args": [
+                {
+                  "name": "id",
+                  "index": 1,
+                  "takesValue": true
+                },
+                {
+                  "name": "source",
+                  "short": "s",
+                  "takesValue": true
+                },
+                {
+                  "name": "curseforge",
+                  "short": "c",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "modrinth",
+                  "short": "m",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "alias",
+                  "short": "a",
+                  "takesValue": true
+                }
+              ]
+            },
+            "update": {
+              "description": "Update all mods."
+            },
+            "disable": {
+              "description": "Disable a mod.",
+              "args": [
+                {
+                  "name": "id",
+                  "index": 1,
+                  "takesValue": true
+                },
+                {
+                  "name": "source",
+                  "short": "s",
+                  "takesValue": true
+                },
+                {
+                  "name": "curseforge",
+                  "short": "c",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "modrinth",
+                  "short": "m",
+                  "multipleOccurrences": true
+                }
+              ]
+            },
+            "rename": {
+              "description": "Rename a mod.",
+              "args": [
+                {
+                  "name": "id",
+                  "index": 1,
+                  "takesValue": true
+                },
+                {
+                  "name": "source",
+                  "short": "s",
+                  "takesValue": true
+                },
+                {
+                  "name": "curseforge",
+                  "short": "c",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "modrinth",
+                  "short": "m",
+                  "multipleOccurrences": true
+                },
+                {
+                  "name": "alias",
+                  "index": 2,
+                  "takesValue": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "Arathi's Minecraft Launcher",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  }
+}
